@@ -79,7 +79,7 @@ public:
 	vector<Vertex> shortestPath(Vertex start, Vertex finish);
 
 	/** add vertex,if addition is successful, return this Vertex reference,else returns 0*/
-	Vertex& addVertex(Coor coor);
+	Vertex* addVertex(Coor coor);
 
 	/** set edge */
 	bool setEdge(Vertex vSource,Vertex vDest);

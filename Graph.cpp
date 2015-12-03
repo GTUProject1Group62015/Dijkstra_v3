@@ -122,7 +122,7 @@ vector<Vertex> Graph::shortestPath(Vertex start, Vertex finish) {
 }
 
 /** add vertex*/
-Vertex& Graph::addVertex(Coor coor) {
+Vertex* Graph::addVertex(Coor coor) {
 	int source_coor_index = -1;
 	for (unsigned int i = 0; i < vertexList.size(); ++i) {
 		if (source_coor_index == -1 && vertexList[i].getX() == coor.x
@@ -139,10 +139,9 @@ Vertex& Graph::addVertex(Coor coor) {
 		source_coor_index = numV;
 		vertexList.push_back(Vertex(source_coor_index, coor));
 		++numV;
-		return vertexList[numV - 1];
+		return &vertexList[numV - 1];
 	}
-	Vertex a;
-	return a;
+	return NULL;
 }
 
 /** set edge */
@@ -170,7 +169,7 @@ void Graph::setVertex(Vertex &v, Coor newCoor) {
 
 
 bool Graph::removeEdge(Vertex &v){
-	if(data.size()<=v.getNo())
+	if(data.size()<=(unsigned int)v.getNo())
 	{
 		return false;
 	}
