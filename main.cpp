@@ -81,7 +81,7 @@ int main()
 	}
 
 	Vertex node=Vertex(12,Coor(81,81));
-	cout<<"nearest vertex "<< g.nearestVertex(list,node)<<endl;
+	cout<<"nearest vertex "<< g.nearestVertex(node)<<endl;
 
 	vector<Edge> aaa;
 	aaa=g.getEdgeList(a);

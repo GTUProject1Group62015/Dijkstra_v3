@@ -62,7 +62,9 @@ public:
 	/**	get edge list
 	 * 	@return return edge list
 	 */
-	inline vector<vector<Edge> >& getData(){return data;}
+	inline vector<vector<Edge> >& getData() {
+		return data;
+	}
 
 	/** insert a new edge into the graph, if given source and dest Coor exist,
 	 * no addition
@@ -82,10 +84,10 @@ public:
 	Vertex* addVertex(Coor coor);
 
 	/** set edge */
-	bool setEdge(Vertex vSource,Vertex vDest);
+	bool setEdge(Vertex vSource, Vertex vDest);
 
 	/*set given vertex,no return value*/
-	void setVertex(Vertex &v,Coor newCoor);
+	void setVertex(Vertex &v, Coor newCoor);
 
 	/**remove connection of given Vertex,return true if successful*/
 	bool removeEdge(Vertex &v);
@@ -95,13 +97,17 @@ public:
 	 * @param node target node
 	 * @return return nearest vertex index
 	 */
-	int nearestVertex(vector<Vertex> list,Vertex node);
-	
-		/**
-	*@param list vertex list
-	*@return Edge list
-	*/
+	int nearestVertex(Vertex node);
+
+	/**
+	 *@param list vertex list
+	 *@return Edge list
+	 */
 	vector<Edge> getEdgeList(vector<Vertex> list);
+
+	inline vector<vector<Edge> >& getAllEdge() {
+		return data;
+	}
 
 private:
 	int directed;

@@ -179,6 +179,7 @@ bool Graph::removeEdge(Vertex &v){
 
 vector<Edge> Graph::getEdgeList(vector<Vertex> list)
 {
+	vector<Vertex> sortestPath();
 	vector<Edge> edgeList;
 	for(unsigned int i=0;i<list.size()-1;i++)
 	{
@@ -189,23 +190,23 @@ vector<Edge> Graph::getEdgeList(vector<Vertex> list)
 
 
 
-int Graph::nearestVertex(vector<Vertex> list,Vertex node)
+int Graph::nearestVertex(Vertex node)
 {
 	int nearestX;
 	int nearestY;
 	int index=0;
 
-	nearestX=fabs(node.getX()-list.at(0).getX());
-	nearestY=fabs(node.getX()-list.at(0).getY());
+	nearestX=fabs(node.getX()-vertexList.at(0).getX());
+	nearestY=fabs(node.getX()-vertexList.at(0).getY());
 
-	for(unsigned int i=1; i<list.size();i++)
+	for(unsigned int i=1; i<vertexList.size();i++)
 	{
-		if(abs(node.getX()-list.at(i).getX() )<nearestX)
+		if(abs(node.getX()-vertexList.at(i).getX() )<nearestX)
 		{
-			if(abs(node.getY()-list.at(i).getY() )<nearestY)
+			if(abs(node.getY()-vertexList.at(i).getY() )<nearestY)
 			{
-				nearestX=abs(node.getX()-list.at(i).getX() );
-				nearestY=abs(node.getY()-list.at(i).getY() );
+				nearestX=abs(node.getX()-vertexList.at(i).getX() );
+				nearestY=abs(node.getY()-vertexList.at(i).getY() );
 				index=i;
 			}
 		}
