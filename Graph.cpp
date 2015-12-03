@@ -178,6 +178,17 @@ bool Graph::removeEdge(Vertex &v){
 	return true;
 }
 
+vector<Edge> Graph::getEdgeList(vector<Vertex> list)
+{
+	vector<Edge> edgeList;
+	for(unsigned int i=0;i<list.size()-1;i++)
+	{
+		edgeList.push_back(getEdge(list[i].getNo(), list[i+1].getNo()));
+	}
+	return edgeList;
+} 
+
+
 
 int Graph::nearestVertex(vector<Vertex> list,Vertex node)
 {

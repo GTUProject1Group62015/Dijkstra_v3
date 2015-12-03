@@ -96,6 +96,12 @@ public:
 	 * @return return nearest vertex index
 	 */
 	int nearestVertex(vector<Vertex> list,Vertex node);
+	
+		/**
+	*@param list vertex list
+	*@return Edge list
+	*/
+	vector<Edge> getEdgeList(vector<Vertex> list);
 
 private:
 	int directed;

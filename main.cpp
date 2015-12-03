@@ -47,7 +47,7 @@ int main2()
 
 int main()
 {
-	/*
+	
 	Graph g;
 	vector<Vertex> list,a;
 	g.addVertex(Coor(10,10));
@@ -82,10 +82,21 @@ int main()
 
 	Vertex node=Vertex(12,Coor(81,81));
 	cout<<"nearest vertex "<< g.nearestVertex(list,node)<<endl;
-	*/
-	Vertex v1=Vertex(0,10,10);
+
+	vector<Edge> aaa;
+	aaa=g.getEdgeList(a);
+
+	
+	for(unsigned int i =0;i<aaa.size();++i){
+		cout << "x: "<<aaa[i].getSourceVertex().getX() <<" y: "<<aaa[i].getSourceVertex().getY()  << endl;
+	}
+	
+	
+	/*Vertex v1=Vertex(0,10,10);
 	Vertex v2=Vertex(1,10,50);
 	Edge e=Edge(v1,v2);
-	cout << "degree: " << e.getDegree() << " slope: " << e.getSlope() << endl;
+	cout << "degree: " << e.getDegree() << " slope: " << e.getSlope() << endl;*/
+
+
 	return 0;
 }
