@@ -20,7 +20,7 @@ int main() {
 	unsigned short int serverPort = 5005;
 	struct sockaddr_in serverAddress;
 	struct hostent *hostInfo;
-	char buf[LINE_ARRAY_SIZE], c;
+	char buf[LINE_ARRAY_SIZE];
 	WSADATA AAA;
 
 	//cout << "Enter server host name or IP address: ";

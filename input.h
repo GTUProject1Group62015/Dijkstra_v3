@@ -30,7 +30,7 @@ public:
 
 	Input(string parseString)
 	{
-		double dereceDouble;
+		//double dereceDouble;
 		int fractionPart,floatPart;
 		string s1 = parseString.substr(parseString.find_first_of('.') + 1);
 		string p1 = s1.substr(0 ,s1.find_first_of(','));
@@ -42,7 +42,7 @@ public:
 		floatPart = atoi(p4.c_str());		
 		x = atoi(p1.c_str());
 		y = atoi(p2.c_str());
-		dereceDouble = atof(p3.c_str());
+		//dereceDouble = atof(p3.c_str());
 		d=atoi(p3.c_str());
 		
 		//control float part
