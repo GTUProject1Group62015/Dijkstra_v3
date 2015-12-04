@@ -19,14 +19,14 @@ class Vertex {
 public:
 	/*default constructors*/
 	Vertex() :
-			vertex_no(-1), coor_x(-1), coor_y(-1){
+			vertex_no(-1), coor_x(-1), coor_y(-1),mark(false){
 	}
 
-	Vertex(int no, int x, int y) :
-			vertex_no(no), coor_x(x), coor_y(y) {
+	Vertex(int no, int x, int y,bool mark_i=false) :
+			vertex_no(no), coor_x(x), coor_y(y),mark(mark_i) {
 	}
-	Vertex(int no, Coor c) :
-			vertex_no(no), coor_x(c.x), coor_y(c.y) {
+	Vertex(int no, Coor c,bool mark_i=false) :
+			vertex_no(no), coor_x(c.x), coor_y(c.y),mark(mark_i) {
 	}
 
 	/*getters*/
@@ -49,10 +49,15 @@ public:
 		}
 		return false;
 	}
+	/** get mark
+	 * @return return bool, True if Vertex traversed else false
+	 */
+	inline bool getMark(){return mark;}
 private:
 	int vertex_no;/*vertex id*/
 	int coor_x;/*x coordinate value*/
 	int coor_y;/*y coordinate value*/
+	bool mark;/*true=uzerinden gecildiginde,false=henuz gecmeyince*/
 
 };
 
