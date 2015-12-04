@@ -11,6 +11,8 @@
 #include <sstream>
 #include <iostream>
 #include <cstdlib>
+#include <string>
+using namespace std;
 class Input {
 public:
 	int x;
@@ -34,8 +36,7 @@ public:
 		string p1 = s1.substr(0 ,s1.find_first_of(','));
 		s1 = s1.substr(s1.find_first_of('.') + 1);
 		string p2 = s1.substr(0 ,s1.find_first_of(','));
-		s1 = s1.substr(s1.find_last_of(' ') + 1);
-		string p3 = s1.substr(0 ,s1.find_first_of('*'));
+		string p3 = s1.substr(s1.find_last_of(' ') + 1);
 		
 		string p4 = p3.substr(p3.find_first_of('.') + 1);
 		floatPart = atoi(p4.c_str());		
