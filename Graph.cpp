@@ -215,4 +215,158 @@ int Graph::nearestVertex(Vertex node)
 	return index;
 }
 
+int Graph::findRotation(Vertex source, Vertex next, double rotation)
+{
+
+	double m; //egim
+	double y;
+	double x;
+
+	//y=( next.getY()-source.getY() );
+	//x=(next.getX()-source.getX());
+
+	//m= y/x;
+
+
+
+
+	//next source un solundaysa
+
+	if(next.getX()<source.getX() && next.getY()==source.getY())
+	{
+
+
+		if((rotation>BATI -15) && (rotation < BATI +15))
+		{
+			return 2;
+		}
+		else if(rotation>=ZERO && rotation<DOGU)
+		{
+			return 1;
+		}
+		else if(rotation>BATI && rotation<=KUZEY)
+		{
+			return 1;
+		}
+		else if(rotation>=GUNEY && rotation<BATI)
+		{
+			return 3;
+		}
+		else if(rotation>=DOGU && rotation<GUNEY)
+		{
+			return 3;
+		}
+
+	}
+
+	//next source un ilerisindeyse --> haritada yukarisindaysa
+
+	else if(next.getX()==source.getX() && next.getY()<source.getY())
+	{
+		if((rotation>KUZEY -15) || (rotation< ZERO +15))
+		{
+			return 2;
+		}
+		else if(rotation>ZERO && rotation<DOGU)
+		{
+			return 1;
+		}
+		else if(rotation>=BATI && rotation<KUZEY)
+		{
+			return 3;
+		}
+		else if(rotation>=GUNEY && rotation<BATI)
+		{
+			return 3;
+		}
+		else if(rotation>=DOGU && rotation<GUNEY)
+		{
+			return 1;
+		}
+	}
+
+	//next source un sagindaysa
+
+	else if(next.getX()>source.getX() && next.getY()==source.getY())
+	{
+		if((rotation>DOGU -15) && (rotation < DOGU +15))
+		{
+			return 2;
+		}
+		else if(rotation>=ZERO && rotation<DOGU)
+		{
+			return 3;
+		}
+		else if(rotation>=BATI && rotation<=KUZEY)
+		{
+			return 3;
+		}
+		else if(rotation>=GUNEY && rotation<BATI)
+		{
+			return 1;
+		}
+		else if(rotation>DOGU && rotation<GUNEY)
+		{
+			return 1;
+		}
+	}
+
+	//next source un gerisindeyse --> haritada asagisinda
+
+	else if(next.getX()==source.getX() && next.getY()>source.getY())
+	{
+		if((rotation>GUNEY -15) && (rotation < GUNEY +15))
+		{
+			return 2;
+		}
+		else if(rotation>=ZERO && rotation<DOGU)
+		{
+			return 3;
+		}
+		else if(rotation>=BATI && rotation<=KUZEY)
+		{
+			return 1;
+		}
+		else if(rotation>GUNEY && rotation<BATI)
+		{
+			return 1;
+		}
+		else if(rotation>=DOGU && rotation<GUNEY)
+		{
+			return 3;
+		}
+	}
+
+	return 0;
+}
+
+int Graph::moveRotation(Vertex source, Vertex next)
+{
+	if(next.getX()==source.getX() && next.getY()==source.getY())
+	{
+		return 5;
+	}
+	else
+	{
+		return 4;
+	}
+}
+
+/*void moveCompass(void)
+{
+	double rotation;
+
+	while(true)
+	{
+		cin>>rotation;
+
+		while( i<list.size() )
+		{
+			findRotation(list[i] , list[i+1], rotation)
+			if(rotation==2) //yon dogru
+				i++;
+		}
+	}
+}
+*/
 

@@ -8,6 +8,7 @@
 #ifndef GRAPH_H_
 #define GRAPH_H_
 #include "Edge.h"
+#include "Define.h"
 #include <vector>
 using namespace std;
 
@@ -109,6 +110,35 @@ public:
 		return data;
 	}
 
+	/** find Rotation
+	 * @param source  The source node on the graph
+	 * @param next   The next node on the graph
+	 * @return rotation value 1,2,3,4,5
+	 * 1-> sol
+	 * 2-> dur yönü buldun
+	 * 3-> sað
+	 * 4-> ileri
+	 * 5-> geri
+	 * 0-> node yerlesim hatasi
+	 */
+
+	int findRotation(Vertex source, Vertex next, double rotation);
+
+	//Eger node un ustune gelip, bize bilgi vermeden gecerse patlar
+	//tam node un ustune geldiginde 5 gonderdik
+	int moveRotation(Vertex source, Vertex next);
+
+	//Server kullaným sekli
+	//int flag=0;
+	//while true
+	//if(flag==2)
+	//	moveRotation
+	//else
+	//	flag=findRotation
+
+	/** move compass by finding rotation coordinate
+	 */
+	//void moveCompass(void);
 private:
 	int directed;
 	int numV;
