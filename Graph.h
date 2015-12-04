@@ -106,9 +106,7 @@ public:
 	 */
 	vector<Edge> getEdgeList(const vector<Vertex> &list);
 
-	inline vector<vector<Edge> >& getAllEdge() {
-		return data;
-	}
+	vector<Edge> getAllEdge();
 
 	/** find Rotation
 	 * @param source  The source node on the graph

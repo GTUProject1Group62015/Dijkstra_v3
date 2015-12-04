@@ -370,3 +370,15 @@ int Graph::moveRotation(Vertex source, Vertex next)
 }
 */
 
+vector<Edge> Graph::getAllEdge(){
+	vector<Edge> result;
+	for(int i = 0 ;i<data.size();++i)
+	{
+		for(int j =0;j<data[i].size();++j)
+		{
+			result.push_back(data[i][j]);
+		}
+	}
+	return result;
+}
+
