@@ -12,6 +12,7 @@
 #define MAX_LINE 100
 #define LINE_ARRAY_SIZE (MAX_LINE+1)
 
+
 using namespace std;
 
 int main() {
@@ -20,6 +21,7 @@ int main() {
 	struct sockaddr_in serverAddress;
 	struct hostent *hostInfo;
 	char buf[LINE_ARRAY_SIZE], c;
+	WSADATA AAA;
 
 	//cout << "Enter server host name or IP address: ";
 	//cin.get(buf, MAX_LINE, '\n');
@@ -28,6 +30,7 @@ int main() {
 	// dots" notation, and returns a pointer to a hostent structure,
 	// which we'll need later.  It's not important for us what this
 	// structure is actually composed of.
+	WSAStartup(2,&AAA);
 	hostInfo = gethostbyname("162.243.185.121");
 	if (hostInfo == NULL) {
 		cerr << WSAGetLastError() << endl;
@@ -59,6 +62,7 @@ int main() {
 
 	if (connect(socketDescriptor, (struct sockaddr *) &serverAddress,
 			sizeof(serverAddress)) < 0) {
+		cerr << WSAGetLastError() << endl;
 		cerr << "cannot connect\n";
 		exit(1);
 	}
@@ -115,7 +119,7 @@ int main() {
 		strcat(buf, "****");
 		cout << "Modified: " << buf << "\n";
 		// Send the line to the server.
-		if (send(socketDescriptor, buf, strlen(buf) + 1, 0) < 0) {
+		if (send(socketDescriptor, array, 1 + 1, 0) < 0) {
 			cerr << "cannot send data ";
 			close(socketDescriptor);
 			exit(1);
