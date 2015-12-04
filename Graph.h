@@ -104,7 +104,7 @@ public:
 	 *@param list vertex list
 	 *@return Edge list
 	 */
-	vector<Edge> getEdgeList(vector<Vertex> list);
+	vector<Edge> getEdgeList(const vector<Vertex> &list);
 
 	inline vector<vector<Edge> >& getAllEdge() {
 		return data;

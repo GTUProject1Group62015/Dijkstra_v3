@@ -177,7 +177,7 @@ bool Graph::removeEdge(Vertex &v){
 	return true;
 }
 
-vector<Edge> Graph::getEdgeList(vector<Vertex> list)
+vector<Edge> Graph::getEdgeList(const vector<Vertex> & list)
 {
 	vector<Vertex> sortestPath();
 	vector<Edge> edgeList;
