@@ -46,7 +46,7 @@ int main2()
 	return 0;
 }*/
 
-int main3()
+int main()
 {
 	
 	Graph g;
@@ -80,7 +80,6 @@ int main3()
 	for(unsigned int i =0;i<a.size();++i){
 		cout << "-x: " << a[i].getX() << " y: " << a[i].getY() << endl;
 	}
-
 	Vertex node=Vertex(12,Coor(81,81));
 	cout<<"nearest vertex "<< g.nearestVertex(node)<<endl;
 

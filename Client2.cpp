@@ -15,7 +15,7 @@
 
 using namespace std;
 
-int main() {
+int main4() {
 	int socketDescriptor;
 	unsigned short int serverPort = 5005;
 	struct sockaddr_in serverAddress;
