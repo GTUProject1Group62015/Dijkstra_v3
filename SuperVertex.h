@@ -33,6 +33,9 @@ public:
 			const Coor &irightTop, const Coor &irightBottom);
 
 
+	/**
+	 * equals operator
+	 */
 	virtual bool operator==(const SuperVertex &comp) const ;
 
 	/*
