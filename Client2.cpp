@@ -15,7 +15,15 @@
 
 using namespace std;
 
-int main4() {
+int main7(){
+	Input i;
+	cout << "x: " << i.x << "y:" << i.y << "d: " << i.d << endl;
+	i.setInput("4048.47198_02921.33589_89.52653****");
+	cout << "x: " << i.x << "y:" << i.y << "d: " << i.d << endl;
+	return 0;
+}
+
+int main() {
 	int socketDescriptor;
 	unsigned short int serverPort = 5005;
 	struct sockaddr_in serverAddress;
@@ -83,6 +91,7 @@ int main4() {
 
 	// Stop when the user inputs a line with just a dot.
 	char array[2];
+	Input input_s;
 	while (true) {
 
 		// Read the modified line back from the server.
@@ -97,7 +106,8 @@ int main4() {
 		 soft
 
 		 */
-		Input input_s = Input(string(buf));
+		input_s.setInput(string(buf));
+		cout << "x: " << input_s.x << " y:" << input_s.y << " d: " << input_s.d << " rec: " << input_s.rec <<  endl;
 		int result;
 		/*
 
@@ -113,6 +123,7 @@ int main4() {
 		} else {
 			result = 1;
 		}
+
 		sprintf(array, "%d", result);
 		strcat(buf, array);
 

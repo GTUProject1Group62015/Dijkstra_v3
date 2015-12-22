@@ -46,7 +46,7 @@ int main2()
 	return 0;
 }*/
 
-int main()
+int main5()
 {
 	
 	Graph g;
@@ -96,8 +96,11 @@ int main()
 	Vertex v2=Vertex(1,10,50);
 	Edge e=Edge(v1,v2);
 	cout << "degree: " << e.getDegree() << " slope: " << e.getSlope() << endl;*/
-	Input i=string("Input: Modified: GPGLL,4048.47235,N,02921.35647,E,202324.00,A,D*6DCompass:  259.871676373");
-	cout << i.x << "  " << i.y  << "  " <<  i.d << endl;
+	//Input i=string("Input: Modified: GPGLL,4048.47235,N,02921.35647,E,202324.00,A,D*6DCompass:  259.871676373");
+	//cout << i.x << "  " << i.y  << "  " <<  i.d << endl;
+
+
+
 
 
 	return 0;
