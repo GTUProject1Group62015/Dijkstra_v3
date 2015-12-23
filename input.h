@@ -98,12 +98,12 @@ public:
 	 */
 	void setInput(string str){
 		vector<string> parsed=split(str,'_');
-		if(parsed.size()>2)
+		if(parsed.size()>3)
 		{
 			x=atoi(parsed[0].substr(parsed[0].find('.')+1).c_str());
 			y=atoi(parsed[1].substr(parsed[1].find('.')+1).c_str());
 			d=atoi(parsed[2].substr(0,parsed[2].find('.')).c_str());
-			rec=atoi(parsed[2].c_str());
+			rec=atoi(parsed[3]/*.substr(0,parsed[3].find('*'))*/.c_str());
 		}
 		else
 		{

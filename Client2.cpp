@@ -107,7 +107,8 @@ int main() {
 
 		 */
 		input_s.setInput(string(buf));
-		cout << "x: " << input_s.x << " y:" << input_s.y << " d: " << input_s.d << " rec: " << input_s.rec <<  endl;
+		cerr << "Modified: " << buf << "\n";
+		cerr << "x: " << input_s.x << " y:" << input_s.y << " d: " << input_s.d << " rec: " << input_s.rec <<  endl;
 		int result;
 		/*
 
@@ -127,8 +128,8 @@ int main() {
 		sprintf(array, "%d", result);
 		strcat(buf, array);
 
-		strcat(buf, "****");
-		cout << "Modified: " << buf << "\n";
+		//strcat(buf, "****");
+		//cerr << "Modified: " << buf << "\n";
 		// Send the line to the server.
 		if (send(socketDescriptor, array, 1 + 1, 0) < 0) {
 			cerr << "cannot send data ";
