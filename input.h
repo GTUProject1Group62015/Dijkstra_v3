@@ -13,6 +13,7 @@
 #include <cstdlib>
 #include <string>
 #include <vector>
+#include "Coor.h"
 #define PII 3.14159265
 
 using namespace std;
@@ -144,39 +145,38 @@ public:
 		return rec;
 	}
 
-	static Coor _gps_a = (55280, 41242);
-	static Coor _gps_b = (56954, 40992);
-	static Coor _gps_c = (56298, 39165);
-	static Coor _gps_d = (54942, 39386);
+	//static Coor _gps_a = (55280, 41242);
+	//static Coor _gps_b = Coor(56954, 40992);
+	//static Coor _gps_c = Coor(56298, 39165);
+	//static Coor _gps_d = (54942, 39386);
 
-	static Coor _pixel_a = (589, 200);
-	static Coor _pixel_b = (641, 200);
-	static Coor _pixel_c = (641, 263);
-	static Coor _pixel_d = (589, 263);
+	//static Coor _pixel_a = (589, 200);
+	//static Coor _pixel_b = Coor(641, 200);
+	//static Coor _pixel_c = (641, 263);
+	//static Coor _pixel_d = (589, 263);
 
-	static double _one_pixel_to_gps = 30.81272932139917;
+#define _one_pixel_to_gps 30.81272932139917
 
 	/**
 	 * @param x,y ->get gps coordinate
 	 * return coor
 	 */
 	static Coor gpsCoorToPixel(int x, int y) {
-		double gps_angle = calculateAngle(_gps_b, _gps_c)
-				- calculateAngle(_gps_b, Coor(x, y));
+		double gps_angle = calculateAngle(Coor(56954, 40992), Coor(56298, 39165))
+				- calculateAngle(Coor(56954, 40992), Coor(x, y));
 		double gps_distance = sqrt(
-				pow(_gps_b.x - x, 2.0) + pow(_gps_b.y - y, 2.0));
+				pow(56954 - x, 2.0) + pow(40992 - y, 2.0));
 		int pixel_distance = gps_distance / _one_pixel_to_gps;
-		int new_x = sin(gps_angle * PII / 180.0) * gps_distance;
-		int new_y = cos(gps_angle * PII / 180.0) * gps_distance;
-		return Coor(_pixel_b.x + new_x, _pixel_b.y + new_y);
+		int new_x = sin(gps_angle * PII / 180.0) * pixel_distance;
+		int new_y = cos(gps_angle * PII / 180.0) * pixel_distance;
+		return Coor(641 + new_x, 200 + new_y);
 	}
 
-	static double calculateAngle(const Coor &c1, const Coor &c2) const {
+	static double calculateAngle(const Coor &c1, const Coor &c2) {
 		double degree;
 		double m;
 		int x_dis = c1.x - c2.x;
 		int y_dis = (c1.y - c2.y);
-		int result = (x_dis * x_dis) + (y_dis * y_dis);
 		if (x_dis == 0) {
 			m = 0.0;
 		} else if (y_dis == 0) {

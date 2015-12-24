@@ -9,6 +9,7 @@
 #include "input.h"
 #include <cstdio>
 #include <winsock2.h>
+#include "input.h"
 #define MAX_LINE 100
 #define LINE_ARRAY_SIZE (MAX_LINE+1)
 
@@ -23,7 +24,13 @@ int main7(){
 	return 0;
 }
 
-int main() {
+
+int main()
+{
+	return 0;
+}
+
+int main9() {
 	int socketDescriptor;
 	unsigned short int serverPort = 5005;
 	struct sockaddr_in serverAddress;
