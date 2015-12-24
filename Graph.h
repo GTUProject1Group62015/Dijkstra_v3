@@ -126,6 +126,7 @@ public:
 	//tam node un ustune geldiginde 5 gonderdik
 	int moveRotation(Vertex source, Vertex next);
 
+
 	//Server kullaným sekli
 	//int flag=0;
 	//while true
@@ -142,6 +143,7 @@ private:
 	int numV;
 	vector<vector<Edge> > data;
 	vector<Vertex> vertexList;
+
 };
 
 #endif /* GRAPH_H_ */

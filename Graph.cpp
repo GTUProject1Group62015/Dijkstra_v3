@@ -381,3 +381,8 @@ vector<Edge> Graph::getAllEdge(){
 	return result;
 }
 
+
+Coor gpsCoorToPixel(int x,int y){
+
+}
+
